@@ -5,8 +5,8 @@ const toId = mongoose.Types.ObjectId;
 
 exports.getCart = async (req, res) => {
   try {
-    const user = await req.user.populate('cart')
-      res.status(200).send({ cart:user.cart });
+    const cartItems = await User.findById(req.params.user).populate('cart')
+      res.status(200).send({ msg:"cart",cartItems });
     } catch (error) {
       res.status(400).send({ msg:"can not get cart",error });
     }

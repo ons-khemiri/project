@@ -7,7 +7,7 @@ const { getCart, EmptyCart, addCart, DeleteItemCart } = require("../controllers/
 const toId = mongoose.Types.ObjectId;
 
 const router = express.Router();
-router.get("/",getCart )
+router.get("/:user",getCart )
 router.get("/:user/:product",addCart);
 router.delete("/:user/:product/",DeleteItemCart );
 router.delete("/:user",EmptyCart );
