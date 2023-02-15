@@ -11,6 +11,7 @@ app.use("/api/admin", require("./routes/admin"));
 app.use("/api/cart",require("./routes/cart"));
 app.use("/api/agent",require("./routes/agent"));
 app.use("/api/order",require("./routes/order"));
+
 const PORT = process.env.PORT;
 app.listen(PORT, (err) =>
 	err ? console.error(err) : console.log(`Server is running on port ${PORT} ..`)
